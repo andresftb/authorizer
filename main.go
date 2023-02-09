@@ -15,7 +15,7 @@ import (
 
 	"github.com/datawire/dlib/dhttp"
 
-	server "authorizer/internal"
+	server "github.com/andresftb/authorizer/internal/server"
 )
 
 func main() {
