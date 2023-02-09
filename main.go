@@ -18,10 +18,10 @@ import (
 )
 
 func main() {
-	test := &server.AuthService{}
+	au := &server.AuthService{}
 
 	grpcHandler := grpc.NewServer()
-	envoyAuthV3.RegisterAuthorizationServer(grpcHandler, test)
+	envoyAuthV3.RegisterAuthorizationServer(grpcHandler, au)
 
 	sc := &dhttp.ServerConfig{
 		Handler: grpcHandler,
