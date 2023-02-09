@@ -6,7 +6,7 @@ require (
 	firebase.google.com/go/v4 v4.10.0
 	github.com/datawire/ambassador/v2 v2.5.1
 	github.com/datawire/dlib v1.3.0
-	google.golang.org/genproto v0.0.0-20230202175211-008b39050e57
+	google.golang.org/genproto v0.0.0-20230110181048-76db0878b65f
 	google.golang.org/grpc v1.53.0
 )
 

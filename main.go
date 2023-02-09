@@ -13,17 +13,15 @@ import (
 
 	envoyAuthV3 "github.com/datawire/ambassador/v2/pkg/api/envoy/service/auth/v3"
 
+	"github.com/andresftb/authorizer/internal/server"
 	"github.com/datawire/dlib/dhttp"
-
-	server "github.com/andresftb/authorizer/internal/server"
 )
 
 func main() {
-
-	p := &server.AuthService{}
+	test := &server.AuthService{}
 
 	grpcHandler := grpc.NewServer()
-	envoyAuthV3.RegisterAuthorizationServer(grpcHandler, p)
+	envoyAuthV3.RegisterAuthorizationServer(grpcHandler, test)
 
 	sc := &dhttp.ServerConfig{
 		Handler: grpcHandler,

@@ -9,8 +9,6 @@ RUN go mod download
 FROM foundation as builder
 
 COPY . .
-RUN rm -fr internal/
-RUN go get github.com/andresftb/authorizer/internal/server
 RUN make
 
 FROM gcr.io/distroless/base as runtime

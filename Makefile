@@ -4,7 +4,7 @@ GIT_COMMIT=$(shell git rev-parse --verify HEAD)
 
 GOOS = $(shell go env GOOS)
 GOARCH = $(shell go env GOARCH)
-GOBUILD = go build -o $(BINARY_BASENAME)-$(GOOS)-$(GOARCH) -a authorizer
+GOBUILD = go build -o bin/$(BINARY_BASENAME)-$(GOOS)-$(GOARCH)
 
 BINARY_BASENAME=authv3
 
@@ -16,8 +16,7 @@ TAG ?= latest
 all: clean fmt test.fast build
 
 build: fmt
-	$(GOBUILD) ./..
-	mv $(BINARY_BASENAME)-$(GOOS)-$(GOARCH) /bin/$(BINARY_BASENAME)-$(GOOS)-$(GOARCH)
+	$(GOBUILD) ./...
 	ln -sf $(BINARY_BASENAME)-$(GOOS)-$(GOARCH) bin/$(BINARY_BASENAME)
 
 run: build
